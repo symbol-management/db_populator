@@ -62,7 +62,7 @@ jobs:
         shell: bash -l {0}
         if: success() && ! env.CI_SKIP
         run: |
-          python -m symbol_exporter.ast_db_populator symbols
+          python -m symbol_exporter.ast_db_populator symbols --n_artifacts=10000
       
 #      - name: index
 #        shell: bash -l {0}
