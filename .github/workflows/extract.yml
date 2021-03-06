@@ -57,6 +57,8 @@ jobs:
           cp distributed.yaml ~/.config/dask
 
       - name: extract_symbols
+        env:
+          STORAGE_SECRET_TOKEN: ${{ secrets.STORAGE_SECRET_TOKEN }}          
         shell: bash -l {0}
         if: success() && ! env.CI_SKIP
         run: |
